@@ -1,2 +1,10 @@
-<h1>Sneakers#index</h1>
-<p>Find me in app/views/sneakers/index.html.erb</p>
+<h1>All Sneakers</h1>
+
+<% @sneakers.each do |sneaker| %>
+  <div>
+    <h2><%= sneaker.title %></h2>
+    <p>Brand: <%= sneaker.brand %></p>
+    <p>Model: <%= sneaker.model %></p>
+    <p><%= link_to 'Show Details', sneaker_path(sneaker) %></p>
+  </div>
+<% end %>

@@ -1,2 +1,24 @@
-<h1>Sneakers#show</h1>
-<p>Find me in app/views/sneakers/show.html.erb</p>
+<h1><%= @sneaker.title %></h1>
+
+<p>Brand: <%= @sneaker.brand %></p>
+<p>Model: <%= @sneaker.model %></p>
+<p>Description: <%= @sneaker.description %></p>
+<p>Size: <%= @sneaker.size %></p>
+<p>Price: <%= @sneaker.price %></p>
+
+
+
+<div class="card-trip">
+  <img src="https://www.midjourney.com/app/jobs/8e22238d-ab38-4d98-a583-058a2a4418fe/" />
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= @sneaker.title %></h2>
+      <h3><%= @sneaker.model %></h3>
+      <h3><%= @sneaker.size %></h3>
+      <p><%= @sneaker.description %></p>
+    </div>
+    <h2 class="card-trip-pricing">£<%= @sneaker.price %></h2>
+  </div>
+</div>
+
+<%= link_to 'Back to all Sneakers', sneakers_path %>
