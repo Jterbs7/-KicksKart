@@ -1,4 +1,4 @@
 class Offer < ApplicationRecord
-  belongs_to :user
-  belongs_to :sneaker
+  belongs_to :user, dependent: :destroy
+  belongs_to :sneaker, dependent: :destroy
 end
