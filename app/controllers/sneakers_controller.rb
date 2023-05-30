@@ -9,5 +9,6 @@ class SneakersController < ApplicationController
   end
 
   def new
+    @sneaker = Sneaker.new
   end
 end
