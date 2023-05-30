@@ -5,6 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+puts "clearing database..."
+Offer.destroy_all
+Sneaker.destroy_all
+User.destroy_all
+
+puts "database cleared"
+puts "creating users..."
+
 user1 = User.create!(
   email: "user1@example.com",
   password: "password"
@@ -17,6 +25,10 @@ user3 = User.create!(
   email: "user3@example.com",
   password: "password"
 )
+
+puts "#{User.count} users created"
+
+puts "Creating Sneakers..."
 sneaker_1 = Sneaker.create!(
   title: "Air Jordan 1 Retro High OG",
   brand: "Nike",
@@ -47,3 +59,5 @@ sneaker_3 = Sneaker.create!(
   status: 1,
   user_id: user3.id
 )
+
+puts "#{Sneaker.count} sneakers created"
