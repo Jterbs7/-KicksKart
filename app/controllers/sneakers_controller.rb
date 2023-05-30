@@ -9,6 +9,7 @@ class SneakersController < ApplicationController
 
   def create
     @sneaker = Sneaker.new(sneaker_params)
+    @sneaker.user = current_user
     if @sneaker.save
       redirect_to sneaker_path(@sneaker)
     else
