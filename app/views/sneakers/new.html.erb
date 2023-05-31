@@ -1,9 +1,11 @@
-<%= simple_form_for(@sneaker) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :brand %>
-  <%= f.input :model %>
-  <%= f.input :description %>
-  <%= f.input :size %>
-   <%= f.input :price %>
-  <%= f.submit %>
+<div class="card-container">
+<%= simple_form_for(@sneaker, html: { class: 'card p-4' }) do |f| %>
+  <%= f.input :title, input_html: { class: 'form-control' } %>
+  <%= f.input :brand, input_html: { class: 'form-control' } %>
+  <%= f.input :model, input_html: { class: 'form-control' } %>
+  <%= f.input :description, input_html: { class: 'form-control' } %>
+  <%= f.input :size, input_html: { class: 'form-control' } %>
+  <%= f.input :price, input_html: { class: 'form-control' } %>
+  <%= f.submit 'Create Sneaker', class: 'btn btn-primary mt-3' %>
 <% end %>
+</div>

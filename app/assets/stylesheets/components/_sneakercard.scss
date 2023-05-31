@@ -1,0 +1,68 @@
+
+.card-container {
+  display: grid;
+  grid-template-columns: 4fr;
+  grid-gap: 16px;
+}
+
+/* For tablets: */
+@media (min-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For desktop: */
+@media (min-width: 992px) {
+  .card-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Common card styling */
+.card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+.card > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card .card-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card .card-infos .card-avatar {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+  border-radius: 20px;
+}
+
+.card .card-price {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}

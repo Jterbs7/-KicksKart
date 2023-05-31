@@ -1,0 +1,12 @@
+<h1>All Offers</h1>
+<div class="card-container">
+<ul>
+  <% @offers.each do |offer| %>
+    <li>
+      <h2><%= link_to "Offer for #{offer.sneaker.title}", offer_path(offer.sneaker, offer) %></h2>
+      <p><%= offer.offer_price %></p>
+      <p><%= offer.status %></p>
+    </li>
+  <% end %>
+</ul>
+</div>
