@@ -13,30 +13,30 @@ User.destroy_all
 puts "database cleared"
 puts "creating users..."
 
-user1 = User.create!(
-  email: "user1@example.com",
-  password: "password"
-)
-user2 = User.create!(
-  email: "user2@example.com",
-  password: "password"
-)
-user3 = User.create!(
-  email: "user3@example.com",
-  password: "password"
-)
-marty_mcfly = User.create!(
-  email: "marty@mcfly.com",
-  password: "password"
-)
-benny_rodriguez = User.create!(
-  email: "benny@thesandlot.com",
-  password: "password"
-)
-forrest_gump = User.create!(
-  email: "forrest@gump.com",
-  password: "password"
-)
+# user1 = User.create!(
+#   email: "user1@example.com",
+#   password: "password"
+# )
+# user2 = User.create!(
+#   email: "user2@example.com",
+#   password: "password"
+# )
+# user3 = User.create!(
+#   email: "user3@example.com",
+#   password: "password"
+# )
+# marty_mcfly = User.create!(
+#   email: "marty@mcfly.com",
+#   password: "password"
+# )
+# benny_rodriguez = User.create!(
+#   email: "benny@thesandlot.com",
+#   password: "password"
+# )
+# forrest_gump = User.create!(
+#   email: "forrest@gump.com",
+#   password: "password"
+# )
 run_dmc = User.create!(
   email: "rundmc@hiphop.com",
   password: "password"
@@ -45,10 +45,10 @@ kanye_west = User.create!(
   email: "kanye@west.com",
   password: "password"
 )
-michael_johnson = User.create!(
-  email: "michael@johnson.com",
-  password: "password"
-)
+# michael_johnson = User.create!(
+#   email: "michael@johnson.com",
+#   password: "password"
+# )
 
 puts "#{User.count} users created"
 
@@ -61,7 +61,7 @@ sneaker_1 = Sneaker.create!(
   size: 42,
   price: 160,
   status: 1,
-  user_id: user1.id
+  user: kanye_west
 )
 sneaker_2 = Sneaker.create!(
   title: "Yeezy Boost 350 V2",
@@ -71,7 +71,7 @@ sneaker_2 = Sneaker.create!(
   size: 43,
   price: 220,
   status: 0,
-  user_id: user2.id
+  user: kanye_west
 )
 sneaker_3 = Sneaker.create!(
   title: 'Stan Smith',
@@ -81,7 +81,7 @@ sneaker_3 = Sneaker.create!(
   size: 44,
   price: 80,
   status: 1,
-  user_id: user3.id
+  user: kanye_west
 )
 sneaker_4 = Sneaker.create!(
   title: "Nike Dunk Low Retro White Black",
@@ -91,7 +91,7 @@ sneaker_4 = Sneaker.create!(
   size: 41,
   price: 150,
   status: 1,
-  user_id: user1.id
+  user: kanye_west
 )
 sneaker_5 = Sneaker.create!(
   title: "Nike Air Mag 'Back to the Future'",
@@ -101,7 +101,7 @@ sneaker_5 = Sneaker.create!(
   size: 45,
   price: 10000,
   status: 0,
-  user_id: user2.id
+  user: kanye_west
 )
 sneaker_6 = Sneaker.create!(
   title: "Puma Future Rider Play On",
@@ -111,7 +111,7 @@ sneaker_6 = Sneaker.create!(
   size: 44,
   price: 80,
   status: 0,
-  user_id: user3.id
+  user: kanye_west
 )
 sneaker_7 = Sneaker.create!(
   title: "Adidas Ultraboost DNA",
@@ -121,7 +121,7 @@ sneaker_7 = Sneaker.create!(
   size: 46,
   price: 180,
   status: 1,
-  user_id: user1.id
+  user: kanye_west
 )
 sneaker_8 = Sneaker.create!(
   title: "New Balance 327",
@@ -131,7 +131,7 @@ sneaker_8 = Sneaker.create!(
   size: 43,
   price: 90,
   status: 0,
-  user_id: user2.id
+  user: kanye_west
 )
 
 sneaker_9 = Sneaker.create!(
@@ -142,7 +142,7 @@ sneaker_9 = Sneaker.create!(
   size: 42,
   price: 10000,
   status: 1,
-  user_id: marty_mcfly.id
+  user: kanye_west
 )
 
 sneaker_10 = Sneaker.create!(
@@ -153,7 +153,7 @@ sneaker_10 = Sneaker.create!(
   size: 42,
   price: 60,
   status: 1,
-  user_id: benny_rodriguez.id
+  user: kanye_west
 )
 
 sneaker_11 = Sneaker.create!(
@@ -164,7 +164,7 @@ sneaker_11 = Sneaker.create!(
   size: 44,
   price: 80,
   status: 1,
-  user_id: forrest_gump.id
+  user: kanye_west
 )
 
 sneaker_12 = Sneaker.create!(
@@ -175,7 +175,7 @@ sneaker_12 = Sneaker.create!(
   size: 45,
   price: 90,
   status: 1,
-  user_id: run_dmc.id
+  user: kanye_west
 )
 
 sneaker_13 = Sneaker.create!(
@@ -186,7 +186,7 @@ sneaker_13 = Sneaker.create!(
   size: 46,
   price: 300,
   status: 1,
-  user_id: kanye_west.id
+  user: kanye_west
 )
 
 sneaker_14 = Sneaker.create!(
@@ -197,7 +197,7 @@ sneaker_14 = Sneaker.create!(
   size: 44,
   price: 1000,
   status: 0,
-  user_id: michael_johnson.id
+  user: kanye_west
 )
 
 puts "#{Sneaker.count} sneakers created"
