@@ -1,10 +1,17 @@
 <h1>All Sneakers</h1>
-
-<% @sneakers.each do |sneaker| %>
-  <div>
-    <h2><%= sneaker.title %></h2>
-    <p>Brand: <%= sneaker.brand %></p>
-    <p>Model: <%= sneaker.model %></p>
-    <p><%= link_to 'Show Details', sneaker_path(sneaker) %></p>
-  </div>
-<% end %>
+<div class="card-container">
+  <% @sneakers.each do |sneaker| %>
+    <div class="card">
+      <img src="https://cdn.midjourney.com/e8650f0c-0fcd-494d-a729-8495c1a8b2a1/0_3.png" />
+      <div class="card-infos">
+        <div>
+          <h2><%= sneaker.title %></h2>
+          <p>Brand: <%= sneaker.brand %></p>
+          <p>Model: <%= sneaker.model %></p>
+          <p><%= link_to 'Show Details', sneaker_path(sneaker) %></p>
+        </div>
+        <h2 class="card-price">£<%= sneaker.price %></h2>
+      </div>
+    </div>
+  <% end %>
+</div>
