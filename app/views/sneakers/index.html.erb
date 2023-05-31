@@ -2,7 +2,11 @@
 <div class="card-container">
   <% @sneakers.each do |sneaker| %>
     <div class="card">
+      <% if sneaker.photo.attached? %>
+      <%= cl_image_tag sneaker.photo.key %>
+      <% else %>
       <img src="https://cdn.midjourney.com/e8650f0c-0fcd-494d-a729-8495c1a8b2a1/0_3.png" />
+      <% end %>
       <div class="card-infos">
         <div>
           <h2><%= sneaker.title %></h2>

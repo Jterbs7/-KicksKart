@@ -1,7 +1,11 @@
 <h1><%= @sneaker.title %></h1>
 <div class="container">
   <div class="card">
-    <img class="card-img" src="https://cdn.midjourney.com/e8650f0c-0fcd-494d-a729-8495c1a8b2a1/0_3.png" />
+    <% if @sneaker.photo.attached? %>
+      <%= cl_image_tag @sneaker.photo.key %>
+      <% else %>
+      <img src="https://cdn.midjourney.com/e8650f0c-0fcd-494d-a729-8495c1a8b2a1/0_3.png" />
+      <% end %>
     <div class="card-infos">
       <div>
         <h2 class="card-title"><%= @sneaker.title %></h2>
