@@ -24,5 +24,5 @@ end
 
 private
 def sneaker_params
-  params.require(:sneaker).permit(:title, :brand, :model, :description, :size, :price)
+  params.require(:sneaker).permit(:title, :brand, :model, :description, :size, :price, :photo)
 end
