@@ -1,9 +1,24 @@
-<h1>All Offers</h1>
+<h1>All Your Offers</h1>
+
+<h2>Offers You've Made</h2>
 <div class="card-container">
 <ul>
-  <% @offers.each do |offer| %>
+  <% @made_offers.each do |offer| %>
     <li>
-      <h2><%= link_to "Offer for #{offer.sneaker.title}", offer_path(offer.sneaker, offer) %></h2>
+      <h2><%= link_to "You made an offer for #{offer.sneaker.title}", offer_path(offer.sneaker, offer) %></h2>
+      <p><%= offer.offer_price %></p>
+      <p><%= offer.status %></p>
+    </li>
+  <% end %>
+</ul>
+</div>
+
+<h2>Offers You've Received</h2>
+<div class="card-container">
+<ul>
+  <% @received_offers.each do |offer| %>
+    <li>
+      <h2><%= link_to "You recieved an offer for #{offer.sneaker.title}", offer_path(offer.sneaker, offer) %></h2>
       <p><%= offer.offer_price %></p>
       <p><%= offer.status %></p>
     </li>

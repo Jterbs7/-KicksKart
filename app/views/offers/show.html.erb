@@ -4,6 +4,6 @@
 <p>Offer price: <%= @offer.offer_price %></p>
 <p>Status: <%= @offer.status %></p>
 
-<%= link_to 'Edit', edit_sneaker_offer_path(@offer.sneaker, @offer) %> |
-<%= link_to 'Back', sneaker_offers_path(@offer.sneaker) %>
+<%= link_to 'Edit', edit_offer_path(@offer.sneaker, @offer) %> |
+<%= link_to 'Back', offers_path(@offer.sneaker) %>
 </div>

@@ -1,0 +1,8 @@
+<h1>Edit Offer</h1>
+<div class="card-container">
+<%= simple_form_for [@sneaker, @offer] do |f| %>
+  <%= f.input :status, collection: Offer.statuses.keys %>
+  <%= f.button :submit, 'Update', class: 'btn-ghost' %>
+<% end %>
+</div>
+<%= link_to 'Back to Offer', offer_path(@offer.sneaker, @offer) %>
