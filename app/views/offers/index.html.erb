@@ -5,7 +5,7 @@
 <ul>
   <% @made_offers.each do |offer| %>
     <li>
-      <h2><%= link_to "You made an offer for #{offer.sneaker.title}", offer_path(offer.sneaker, offer) %></h2>
+      <h2><%= link_to "You made an offer for #{offer.sneaker.title}", offer_path(offer) %></h2>
       <p><%= offer.offer_price %></p>
       <p><%= offer.status %></p>
     </li>
