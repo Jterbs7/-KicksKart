@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
   resources :offers, only: [:show, :index, :edit, :update]
   get "/dashboard", to: "pages#dashboard", as: :dashboard
+  get "/my_sneakers", to: "sneakers#my_sneakers", as: :my_sneakers
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Defines the root path route ("/")
   # root "articles#index"
