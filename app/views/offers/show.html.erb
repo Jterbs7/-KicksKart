@@ -1,9 +1,17 @@
-<div class="card-container">
-<h1>Offer for <%= @offer.sneaker.title %></h1>
-
-<p>Offer price: <%= @offer.offer_price %></p>
-<p>Status: <%= @offer.status %></p>
-
-<%= link_to 'Edit', edit_offer_path(@offer) %> |
-<%= link_to 'Back', offers_path(@offer.sneaker) %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6"> <!-- adjust this number to change the card width -->
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">Offer for <%= @offer.sneaker.title %></h1>
+          <p class="card-text">Offer price: <%= @offer.offer_price %></p>
+          <p class="card-text">Status: <%= @offer.status %></p>
+          <div class="mt-4">
+            <%= link_to 'Edit', edit_offer_path(@offer), class: "btn btn-primary" %> |
+            <%= link_to 'Back', offers_path(@offer.sneaker), class: "btn btn-secondary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
