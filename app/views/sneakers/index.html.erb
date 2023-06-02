@@ -1,28 +1,53 @@
    <div class="header" style ="margin: 0 auto;">
     <h1>kickskart</h1>
     <p>Elevate Your Sneaker Game!<p>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNXKe3GTbcjdqvX9YlFOBE0tAB-l5MnoT_D7zyXqOmuzm3fX57Url44VlGJIUXr3YbEeWBBh95DBAOdbrwTdkzPZfqnA8M_ueN7uazMv4SCUhcf8entgJrIv_u-hsPGG_ZuVd8KKbI5Zr0oli-40C0BQm5sj7uN6kE_d7I-Cg-YWOO9Hrc0t6i7ktb/s1920/shoe%20banner%20by%20lincungstock.jpg)">
-</div>
+    <%# <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNXKe3GTbcjdqvX9YlFOBE0tAB-l5MnoT_D7zyXqOmuzm3fX57Url44VlGJIUXr3YbEeWBBh95DBAOdbrwTdkzPZfqnA8M_ueN7uazMv4SCUhcf8entgJrIv_u-hsPGG_ZuVd8KKbI5Zr0oli-40C0BQm5sj7uN6kE_d7I-Cg-YWOO9Hrc0t6i7ktb/s1920/shoe%20banner%20by%20lincungstock.jpg)"> %>
    </div>
 
-<div class="card-container">
-  <% @sneakers.each do |sneaker| %>
-    <div class="card">
-      <% if sneaker.photo.attached? %>
-      <%= cl_image_tag sneaker.photo.key %>
-      <% else %>
-      <img src="https://cdn.midjourney.com/e8650f0c-0fcd-494d-a729-8495c1a8b2a1/0_3.png" />
-      <% end %>
+<div id="carouselExample" class="carousel slide ">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://res.cloudinary.com/shelflife-online/image/upload/c_fill,f_auto,q_auto:best,w_1600/v1575961299/uploads/assets/672-YNUK-BLOG-HEADER-SIZING-QWA.jpg" class="d-block w-100  carousel-image" alt="">
+    </div>
+    <div class="carousel-item">
+      <img src="https://free4kwallpapers.com/uploads/originals/2018/11/10/if-you-need-a-new-sneaker-.-wallpaper_.jpg" class="d-block w-100 carousel-image" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://cdn.shopify.com/s/files/1/0244/4912/2367/collections/Brand_banner_NIKE_SB.jpg?v=1612454482" class="d-block w-100 carousel-image" alt="..." >
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div class="recent">
+<h1 >Recent Added</h1>
+</div>
+<div class="container">
+  <div class="card-container">
+      <% @sneakers.each do |sneaker| %>
+        <div class="card">
+          <% if sneaker.photo.attached? %>
+          <%= cl_image_tag sneaker.photo.key %>
+          <% else %>
+          <img src="https://cdn.midjourney.com/e8650f0c-0fcd-494d-a729-8495c1a8b2a1/0_3.png" />
+         <% end %>
       <div class="card-infos">
         <div>
           <h2><%= sneaker.title %></h2>
           <p>Brand: <%= sneaker.brand %></p>
           <p>Model: <%= sneaker.model %></p>
           <p>Status: <%= sneaker.status %></p>
-          <p><%= link_to 'Show Details', sneaker_path(sneaker) %></p>
+          <p style="text-decoration:none;"><%= link_to 'Show Details', sneaker_path(sneaker), class: 'show-details-link' %></p>
         </div>
         <h2 class="card-price">£<%= sneaker.price %></h2>
       </div>
     </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

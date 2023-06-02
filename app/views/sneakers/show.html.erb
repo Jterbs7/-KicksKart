@@ -7,7 +7,6 @@
       <img src="https://cdn.midjourney.com/e8650f0c-0fcd-494d-a729-8495c1a8b2a1/0_3.png" />
       <% end %>
     <div class="card-infos">
-      <div>
         <h2 class="card-title"><%= @sneaker.title %></h2>
         <h3><%= @sneaker.model %></h3>
         <h5>Size <%= @sneaker.size %></h5>
@@ -19,4 +18,26 @@
 
   <%= link_to 'Back to all Sneakers', sneakers_path %>
   <%= link_to 'Make an Offer', new_sneaker_offer_path(@sneaker) %>
+</div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Make an Offer
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Offer</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for [@sneaker, @offer] do |f| %>
+          <%= f.input :offer_price %>
+          <%= f.button :submit, 'Submit', class: 'btn-ghost' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
