@@ -1,6 +1,6 @@
 class SneakersController < ApplicationController
   def index
-    @sneakers = Sneaker.all
+    @sneakers = Sneaker.where(status: 'available')
   end
 
   def show
@@ -23,8 +23,12 @@ class SneakersController < ApplicationController
   end
 
   def my_sneakers
-    @owned_sneakers = current_user.sneakers
+    # @owned_sneakers = current_user.sneakers
+    # @owned_sneakers_pending = current_user.sneakers.joins(:offers).where(offers: { status: 'pending' })
+    # @owned_sneakers_pending = current_user.sneakers
+    @owned_sneakers_pending = current_user.sneakers.includes(:offers).where(offers: { id: nil })
     @accepted_sneakers = Sneaker.joins(:offers).where(offers: { status: 'accepted', user_id: current_user.id })
+    @owned_sneakers_accepted = current_user.sneakers.joins(:offers).where(offers: { status: 'accepted' })
   end
 
   private

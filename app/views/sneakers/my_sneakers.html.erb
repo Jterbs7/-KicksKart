@@ -1,45 +1,93 @@
-<h1>My Sneakers</h1>
+<div class="tabs-underlined">
+  <div class="tab-underlined active" id="selling-tab">My Listings</div>
+  <div class="tab-underlined" id="buying-tab">Bought</div>
+  <div class="tab-underlined" id="sold-tab">Sold</div>
+</div>
 
-<h2>Sneakers I Own</h2>
-<div class="card-container">
-  <% @owned_sneakers.each do |sneaker| %>
-    <div class="card">
+<div class="tab-content" id="selling-content">
+  <% @owned_sneakers_pending.each do |sneaker| %>
+  <%# <% @owned_sneakers.each do |sneaker| %>
+    <div class="card-product">
       <% if sneaker.photo.attached? %>
-      <%= cl_image_tag sneaker.photo.key %>
+        <%= cl_image_tag sneaker.photo.key %>
       <% else %>
-      <img src="https://cdn.midjourney.com/e8650f0c-0fcd-494d-a729-8495c1a8b2a1/0_3.png" />
+        <img src="https://cdn.midjourney.com/e8650f0c-0fcd-494d-a729-8495c1a8b2a1/0_3.png" />
       <% end %>
-      <div class="card-infos">
-        <div>
-          <h2><%= sneaker.title %></h2>
-          <p>Brand: <%= sneaker.brand %></p>
-          <p>Model: <%= sneaker.model %></p>
-          <p><%= link_to 'Show Details', sneaker_path(sneaker) %></p>
-        </div>
+      <div class="card-product-infos">
+        <h2><%= sneaker.title %></h2>
+        <p>Brand: <%= sneaker.brand %></p>
+        <p>Model: <%= sneaker.model %></p>
+        <p><%= link_to 'Show Details', sneaker_path(sneaker) %></p>
         <h2 class="card-price">£<%= sneaker.price %></h2>
       </div>
     </div>
   <% end %>
 </div>
 
-<h2>Sneakers I Have Accepted Offers On</h2>
-<div class="card-container">
+<div class="tab-content" id="buying-content" style="display: none;">
   <% @accepted_sneakers.each do |sneaker| %>
-    <div class="card">
+    <div class="card-product">
       <% if sneaker.photo.attached? %>
-      <%= cl_image_tag sneaker.photo.key %>
+        <%= cl_image_tag sneaker.photo.key %>
       <% else %>
-      <img src="https://cdn.midjourney.com/e8650f0c-0fcd-494d-a729-8495c1a8b2a1/0_3.png" />
+        <img src="https://cdn.midjourney.com/e8650f0c-0fcd-494d-a729-8495c1a8b2a1/0_3.png" />
       <% end %>
-      <div class="card-infos">
-        <div>
-          <h2><%= sneaker.title %></h2>
-          <p>Brand: <%= sneaker.brand %></p>
-          <p>Model: <%= sneaker.model %></p>
-          <p><%= link_to 'Show Details', sneaker_path(sneaker) %></p>
-        </div>
+      <div class="card-product-infos">
+        <h2><%= sneaker.title %></h2>
+        <p>Brand: <%= sneaker.brand %></p>
+        <p>Model: <%= sneaker.model %></p>
+        <p><%= link_to 'Show Details', sneaker_path(sneaker) %></p>
         <h2 class="card-price">£<%= sneaker.price %></h2>
       </div>
     </div>
   <% end %>
 </div>
+
+<div class="tab-content" id="sold-content" style="display: none;">
+  <% @owned_sneakers_accepted.each do |sneaker| %>
+  <%# <% @accepted_sneakers.each do |sneaker| %>
+    <div class="card-product">
+      <% if sneaker.photo.attached? %>
+        <%= cl_image_tag sneaker.photo.key %>
+      <% else %>
+        <img src="https://cdn.midjourney.com/e8650f0c-0fcd-494d-a729-8495c1a8b2a1/0_3.png" />
+      <% end %>
+      <div class="card-product-infos">
+        <h2><%= sneaker.title %></h2>
+        <p>Brand: <%= sneaker.brand %></p>
+        <p>Model: <%= sneaker.model %></p>
+        <p><%= link_to 'Show Details', sneaker_path(sneaker) %></p>
+        <h2 class="card-price">£<%= sneaker.price %></h2>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<script>
+  document.getElementById('selling-tab').addEventListener('click', function() {
+    document.getElementById('selling-tab').classList.add('active');
+    document.getElementById('buying-tab').classList.remove('active');
+    document.getElementById('sold-tab').classList.remove('active');
+    document.getElementById('selling-content').style.display = 'block';
+    document.getElementById('buying-content').style.display = 'none';
+    document.getElementById('sold-content').style.display = 'none';
+  });
+
+  document.getElementById('buying-tab').addEventListener('click', function() {
+    document.getElementById('buying-tab').classList.add('active');
+    document.getElementById('selling-tab').classList.remove('active');
+    document.getElementById('sold-tab').classList.remove('active');
+    document.getElementById('buying-content').style.display = 'block';
+    document.getElementById('selling-content').style.display = 'none';
+    document.getElementById('sold-content').style.display = 'none';
+  });
+
+  document.getElementById('sold-tab').addEventListener('click', function() {
+    document.getElementById('sold-tab').classList.add('active');
+    document.getElementById('selling-tab').classList.remove('active');
+    document.getElementById('buying-tab').classList.remove('active');
+    document.getElementById('sold-content').style.display = 'block';
+    document.getElementById('selling-content').style.display = 'none';
+    document.getElementById('buying-content').style.display = 'none';
+  });
+</script>

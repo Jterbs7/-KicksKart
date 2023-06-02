@@ -1,0 +1,20 @@
+.grid-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.scrollable-grid {
+  overflow: auto;
+  max-height: 100%; // increased the max height
+  width: 60%; // increased the width
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); // Change the pixel value to match the desired card width
+  grid-gap: 20px; // Adjust this to add space between cards
+  border-radius: 10px; // optional
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); // Add box shadow here
+  padding: 2%; // Increased the padding
+}
+
+h2 {
+  text-align: center;
+}
