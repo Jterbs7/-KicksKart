@@ -5,6 +5,7 @@ class SneakersController < ApplicationController
 
   def show
     @sneaker = Sneaker.find(params[:id])
+    @offer = Offer.new
   end
 
   def create
