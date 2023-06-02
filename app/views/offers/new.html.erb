@@ -1,8 +1,8 @@
 <h1>Make an offer</h1>
 <div class="card-container">
-<%= simple_form_for [@sneaker, @offer] do |f| %>
-  <%= f.input :offer_price %>
-  <%= f.button :submit, 'Submit', class: 'btn-ghost' %>
-<% end %>
+  <%= simple_form_for [@sneaker, @offer] do |f| %>
+    <%= f.input :offer_price %>
+    <%= f.button :submit, 'Submit', class: 'btn-ghost' %>
+  <% end %>
 </div>
 <%= link_to 'Back to Sneaker', sneaker_path(@sneaker) %>
