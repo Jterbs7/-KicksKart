@@ -1,37 +1,35 @@
 <h1>All Your Offers</h1>
-
-<h2>Offers You've Made</h2>
-<div class="container">
-<ul class="list-inline tabs-underlined">
-  <% @made_offers.each do |offer| %>
-    <li>
-      <h2><%= link_to "You made an offer for #{offer.sneaker.title}", offer_path(offer) %></h2>
-      <p><%= offer.offer_price %></p>
-      <p><%= offer.status %></p>
+<div class = container>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="made-tab" data-bs-toggle="tab" data-bs-target="#made" type="button" role="tab" aria-controls="made" aria-selected="true">Offers Made</button>
     </li>
-  <% end %>
-</ul>
-  </div>
-<h2>Offers You've Received</h2>
-<ul>
-  <% @received_offers.each do |offer| %>
-    <li>
-      <h2><%= link_to "You recieved an offer for #{offer.sneaker.title}", offer_path(offer) %></h2>
-      <p><%= offer.offer_price %></p>
-      <p><%= offer.status %></p>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="receieved-tab" data-bs-toggle="tab" data-bs-target="#received" type="button" role="tab" aria-controls="received" aria-selected="false">Offers Receieved</button>
     </li>
-  <% end %>
-</ul>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="made" role="tabpanel" aria-labelledby="made-tab">
+      <div>
+        <% @made_offers.each do |offer| %>
+          <div class="offer-card">
+            <h4><%= link_to "#{offer.sneaker.title}", offer_path(offer) %></h4>
+            <p>Offer price: <%= offer.offer_price %></p>
+            <p>Status: <%= offer.status %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="received" role="tabpanel" aria-labelledby="received-tab">
+      <div>
+        <% @received_offers.each do |offer| %>
+          <div class="offer-card">
+            <h4><%= link_to "#{offer.sneaker.title}", offer_path(offer) %></h4>
+            <p>Offer price:<%= offer.offer_price %></p>
+            <p>Status:<%= offer.status %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
-
-
-<%# <ul class="list-inline tabs-underlined">
-  <li>
-    <a href="#" class="tab-underlined active">Offers You've Made</a>
-  </li>
-  <li>
-    <a href="#" class="tab-underlined">Offers You've Received</a>
-  </li>
-
-</ul> %>
