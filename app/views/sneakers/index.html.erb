@@ -18,6 +18,7 @@
           <h2><%= sneaker.title %></h2>
           <p>Brand: <%= sneaker.brand %></p>
           <p>Model: <%= sneaker.model %></p>
+          <p>Status: <%= sneaker.status %></p>
           <p><%= link_to 'Show Details', sneaker_path(sneaker) %></p>
         </div>
         <h2 class="card-price">£<%= sneaker.price %></h2>
@@ -25,4 +26,3 @@
     </div>
   <% end %>
 </div>
-

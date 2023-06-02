@@ -2,7 +2,7 @@
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
-  require "open-uri"
+require "open-uri"
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 puts "clearing database..."
@@ -10,33 +10,34 @@ Offer.destroy_all
 Sneaker.destroy_all
 User.destroy_all
 
-  puts "database cleared"
-  puts "creating users..."
+puts "database cleared"
+puts "creating users..."
 
-# user1 = User.create!(
-#   email: "user1@example.com",
-#   password: "password"
-# )
-# user2 = User.create!(
-#   email: "user2@example.com",
-#   password: "password"
-# )
-# user3 = User.create!(
-#   email: "user3@example.com",
-#   password: "password"
-# )
-# marty_mcfly = User.create!(
-#   email: "marty@mcfly.com",
-#   password: "password"
-# )
-# benny_rodriguez = User.create!(
-#   email: "benny@thesandlot.com",
-#   password: "password"
-# )
-# forrest_gump = User.create!(
-#   email: "forrest@gump.com",
-#   password: "password"
-# )
+    # user1 = User.create!(
+    #   email: "user1@example.com",
+    #   password: "password"
+    # )
+    # user2 = User.create!(
+    #   email: "user2@example.com",
+    #   password: "password"
+    # )
+
+michael_johnson = User.create!(
+  email: "michael@johnson.com",
+  password: "password"
+)
+michael_jordan = User.create!(
+  email: "michael@jordan.com",
+  password: "password"
+)
+marty_mcfly = User.create!(
+  email: "marty@mcfly.com",
+  password: "password"
+)
+forrest_gump = User.create!(
+  email: "forrest@gump.com",
+  password: "password"
+)
 run_dmc = User.create!(
   email: "rundmc@hiphop.com",
   password: "password"
@@ -45,10 +46,6 @@ kanye_west = User.create!(
   email: "kanye@west.com",
   password: "password"
 )
-# michael_johnson = User.create!(
-#   email: "michael@johnson.com",
-#   password: "password"
-# )
 
 puts "#{User.count} users created"
 
@@ -60,8 +57,8 @@ sneaker_1 = Sneaker.create!(
   description: "The Air Jordan 1 Retro High OG returns the legendary silhouette to its most accurate-to-original shape and height.",
   size: 42,
   price: 160,
-  status: 1,
-  user: kanye_west
+  status: 0,
+  user: michael_jordan
 )
 sneaker_2 = Sneaker.create!(
   title: "Yeezy Boost 350 V2",
@@ -80,8 +77,8 @@ sneaker_3 = Sneaker.create!(
   description: "With a clean and minimalist look, the Adidas Stan Smith shoes keep the essence of the 1971 original.",
   size: 44,
   price: 80,
-  status: 1,
-  user: kanye_west
+  status: 0,
+  user: run_dmc
 )
 sneaker_4 = Sneaker.create!(
   title: "Nike Dunk Low Retro White Black",
@@ -90,8 +87,8 @@ sneaker_4 = Sneaker.create!(
   description: "Made famous in the college hoops scene, the Dunk Low now lives on in this silhouette that's ready for everyday wear.",
   size: 41,
   price: 150,
-  status: 1,
-  user: kanye_west
+  status: 0,
+  user: michael_jordan
 )
 sneaker_5 = Sneaker.create!(
   title: "Nike Air Mag 'Back to the Future'",
@@ -101,7 +98,7 @@ sneaker_5 = Sneaker.create!(
   size: 45,
   price: 10000,
   status: 0,
-  user: kanye_west
+  user: marty_mcfly
 )
 sneaker_6 = Sneaker.create!(
   title: "Puma Future Rider Play On",
@@ -120,7 +117,7 @@ sneaker_7 = Sneaker.create!(
   description: "Running shoes that celebrate a rich legacy with modern innovations.",
   size: 46,
   price: 180,
-  status: 1,
+  status: 0,
   user: kanye_west
 )
 sneaker_8 = Sneaker.create!(
@@ -141,8 +138,8 @@ sneaker_9 = Sneaker.create!(
   description: "The self-lacing futuristic shoes from Back to the Future II.",
   size: 42,
   price: 10000,
-  status: 1,
-  user: kanye_west
+  status: 0,
+  user: marty_mcfly
 )
 
 sneaker_10 = Sneaker.create!(
@@ -152,8 +149,8 @@ sneaker_10 = Sneaker.create!(
   description: "Classic sneakers, known for outrunning 'The Beast' in The Sandlot.",
   size: 42,
   price: 60,
-  status: 1,
-  user: kanye_west
+  status: 0,
+  user: run_dmc
 )
 
 sneaker_11 = Sneaker.create!(
@@ -163,8 +160,8 @@ sneaker_11 = Sneaker.create!(
   description: "Forrest Gump's shoes during his cross-country run.",
   size: 44,
   price: 80,
-  status: 1,
-  user: kanye_west
+  status: 0,
+  user: forrest_gump
 )
 
 sneaker_12 = Sneaker.create!(
@@ -174,8 +171,8 @@ sneaker_12 = Sneaker.create!(
   description: "Made famous by the hip-hop group Run-DMC.",
   size: 45,
   price: 90,
-  status: 1,
-  user: kanye_west
+  status: 0,
+  user: run_dmc
 )
 
 sneaker_13 = Sneaker.create!(
@@ -185,7 +182,7 @@ sneaker_13 = Sneaker.create!(
   description: "A part of Kanye West's Yeezy line with Adidas.",
   size: 46,
   price: 300,
-  status: 1,
+  status: 0,
   user: kanye_west
 )
 
@@ -197,7 +194,7 @@ sneaker_14 = Sneaker.create!(
   size: 44,
   price: 1000,
   status: 0,
-  user: kanye_west
+  user: michael_johnson
 )
 
 file_1 = URI.open("https://images.stockx.com/images/Air-Jordan-1-Retro-High-Bred-Toe-Product.jpg?fit=fill&bg=FFFFFF&w=1200&h=857&fm=webp&auto=compress&dpr=2&trim=color&updated_at=1606322598&q=75")

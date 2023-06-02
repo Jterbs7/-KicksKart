@@ -44,7 +44,6 @@ class OffersController < ApplicationController
     end
   end
 
-
   def update
     if @offer.sneaker.user == current_user
       # update the offer with data from submitted form
@@ -61,7 +60,18 @@ class OffersController < ApplicationController
     end
   end
 
-    private
+  def accept
+    @offer = Offer.find(params[:id])
+    @sneaker = @offer.sneaker
+    if @offer.update(status: 'accepted')
+      @sneaker.update(status: 'sold')
+      redirect_to offers_path, notice: 'Offer has been accepted and sneaker marked as sold.'
+    else
+      render :edit, alert: 'Offer not accepted'
+    end
+  end
+
+  private
 
   # get offer based on offer id
   def set_offer
