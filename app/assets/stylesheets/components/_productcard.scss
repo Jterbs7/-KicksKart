@@ -1,19 +1,21 @@
 .card-product {
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  border-radius: 5px;
-  margin: 10px;
+//   overflow: hidden;
+//   height: 120px;
+//   background: white;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   display: flex;
+//   align-items: center;
+//   border-radius: 5px;
+//   margin: 10px;
+// }
+     width:300px;
 }
 
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
+// .card-product img {
+//   height: 100%;
+//   width: 120px;
+//   object-fit: cover;
+// }
 
 .card-product h2 {
   font-size: 16px;
@@ -32,4 +34,10 @@
 .card-product-infos {
   // padding: 40px;
   // position: absolute;
+}
+.sneaker-group{
+  display:flex;
+  flex-wrap: wrap;
+  padding:0px 90px;
+
 }
