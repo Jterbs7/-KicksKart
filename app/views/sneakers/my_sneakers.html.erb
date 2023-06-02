@@ -3,8 +3,9 @@
   <div class="tab-underlined" id="buying-tab">Bought</div>
   <div class="tab-underlined" id="sold-tab">Sold</div>
 </div>
+<div class="container">
 
-<div class="tab-content" id="selling-content">
+  <div class="tab-content" id="selling-content">
   <% @owned_sneakers_pending.each do |sneaker| %>
   <%# <% @owned_sneakers.each do |sneaker| %>
     <div class="card-product">
@@ -22,6 +23,7 @@
       </div>
     </div>
   <% end %>
+</div>
 </div>
 
 <div class="tab-content" id="buying-content" style="display: none;">
