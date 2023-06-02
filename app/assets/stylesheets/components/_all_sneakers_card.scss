@@ -43,10 +43,11 @@
 .carousel-image{
   object-fit: cover;
   height: 350px;
-}.recent{
-  width: fit-content;
- position: relative;
- right:0px;
- margin: 10px;
- padding-top: 50px;
+}
+
+.recent {
+  text-align: center;
+  h1 {
+    font-family: 'Inter', sans-serif;
+  }
 }

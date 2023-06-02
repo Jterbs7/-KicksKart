@@ -19,13 +19,37 @@
 }
 
 .offer-card {
+  display: flex;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  padding: 16px;
   margin: 1rem;
   border-radius: 10px;
   a {
     text-decoration: none;
     display: inline-block;
   }
+}
+
+.offer-card {
+  img {
+    height: 100%;
+    width: 200px;
+    object-fit: cover;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+}
+
+.offer-card-info {
+  padding: 2rem;
+  a {
+  font-family: 'Inter', sans-serif;
+  }
+}
+
+.offers-title {
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
