@@ -3,7 +3,8 @@
   <div class="tab-underlined" id="buying-tab">Bought</div>
   <div class="tab-underlined" id="sold-tab">Sold</div>
 </div>
-<div class="container ">
+
+<div class="container mb-5">
 
   <div class="tab-content sneaker-group" id="selling-content">
   <% @owned_sneakers_pending.each do |sneaker| %>
@@ -70,7 +71,8 @@
     </div>
   <% end %>
 </div>
-
+  <br>
+  <br>g
 <script>
   document.getElementById('selling-tab').addEventListener('click', function() {
     document.getElementById('selling-tab').classList.add('active');
