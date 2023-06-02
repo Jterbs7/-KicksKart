@@ -1,6 +1,10 @@
 class SneakersController < ApplicationController
   def index
-    @sneakers = Sneaker.where(status: 'available')
+    # @sneakers = Sneaker.where(status: 'available')
+    # @sneakers = Sneaker.all
+    # @owned_sneakers_pending = sneakers.includes(:offers).where(offers: { id: nil })
+    # @sneakers = Sneaker.includes(:offers).where(offers: { id: nil }).where(status: 'available')
+    @sneakers = Sneaker.left_outer_joins(:offers).where(offers: { id: nil })
   end
 
   def show
