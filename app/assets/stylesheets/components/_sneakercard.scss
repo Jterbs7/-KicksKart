@@ -4,6 +4,12 @@
   grid-template-columns: 4fr;
   grid-gap: 16px;
   margin-top: 16px;
+  padding-bottom: 100px;
+  border-radius: 0; /* Remove border radius */
+  box-shadow: none; /* Remove box shadow */
+  background-color: #f8f9fa;
+  transition: transform 0.3s ease;
+
 }
 
 /* For tablets: */
@@ -22,10 +28,10 @@
 
 /* Common card styling */
 .card {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  border-radius: 0; /* Remove border radius */
+  box-shadow: none; /* Remove box shadow */
+  background-color: #f8f9fa;
+  transition: transform 0.3s ease;
 }
 
 .card > img {
@@ -44,6 +50,9 @@
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  position: relative;
+  left: 0;
+  padding-top: 12px;
 }
 
 .card .card-infos {
@@ -52,18 +61,27 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-}
+  border-radius: 0; /* Remove border radius */
+  box-shadow: none;
+  }
 
 .card .card-infos .card-avatar {
   position: absolute;
   right: 16px;
   top: -20px;
   width: 40px;
-  border-radius: 20px;
+  // border-radius: 20px;
 }
 
 .card .card-price {
   font-size: 20px;
   font-weight: bold;
   margin: 0;
+}
+.show-details-link{
+  text-decoration: none;
+  font: bold;
+}
+.card-container:hover {
+  transform: translateZ(20px);
 }
